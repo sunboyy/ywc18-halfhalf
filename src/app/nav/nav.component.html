@@ -1,0 +1,21 @@
+<div class="nav">
+  <div class="logo">
+    <img src="https://search-merchant.xn--42caj4e6bk1f5b1j.com/images/halfhalf-logo.png" height="40">
+  </div>
+  <div class="search">
+    <nz-select [ngModel]="searchLocation" [nzCustomTemplate]="defaultTemplate" nzSize="large" [nzDropdownMatchSelectWidth]="false" nzBorderless class="location-select">
+      <nz-option nzCustomContent nzValue="nearby" nzLabel="พื้นที่ใกล้ฉัน">
+        <img src="assets/location_on-24px.svg">
+        พื้นที่ใกล้ฉัน
+      </nz-option>
+    </nz-select>
+    <ng-template #defaultTemplate let-selected>
+      <img src="assets/location_on-24px.svg">
+      {{ selected.nzLabel }}
+    </ng-template>
+    <input type="text" nz-input [ngModel]="searchQuery" class="query-field" placeholder="ค้นหา ชื่อ ร้านอาหาร และเครื่องดื่ม ร้านธงฟ้า ร้านค้า OTOP และสินค้าทั่วไป">
+    <button nz-button class="search-button">
+      <i nz-icon nzType="search" nzTheme="outline"></i>
+    </button>
+  </div>
+</div>
