@@ -1,0 +1,26 @@
+<div class="merchant-card">
+  <div class="marchant-image" [style.background-image]="'url(' + merchant.coverImageId + ')'"></div>
+  <div class="merchant-detail">
+    <div class="title">
+      <span>{{ merchant.shopNameTH }}</span>
+      <nz-tag class="open-tag" nzColor="#1bc300" *ngIf="merchant.isOpen == 'Y'">เปิดอยู่</nz-tag>
+      <nz-tag class="open-tag" nzColor="#a1a1a1" *ngIf="merchant.isOpen == 'N'">ปิดแล้ว</nz-tag>
+    </div>
+    <div class="subtitle">
+      <span>{{ merchant.categoryName }}</span>
+      <span class="splitter">|</span>
+      <span class="price-range">{{ getPriceRangeB(merchant.priceLevel) }}</span>
+      <span class="price-range price-range-faded">{{ getPriceRangeB(4 - merchant.priceLevel) }}</span>
+      <span class="splitter">|</span>
+      <span>{{ merchant.addressDistrictName }} {{ merchant.addressProvinceName }}</span>
+    </div>
+    <div class="hr"></div>
+    <div class="subtitle" [innerHTML]="merchant.highlightText"></div>
+    <div class="subtitle"><strong>เมนูแนะนำ:</strong> {{ getRecommendedMenus() }}</div>
+    <div class="facilities">
+      <div class="facility-icon" *ngFor="let facility of merchant.facilities">
+        <img [src]="getFacilityIcon(facility)" />
+      </div>
+    </div>
+  </div>
+</div>

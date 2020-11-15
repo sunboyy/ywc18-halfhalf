@@ -74,7 +74,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ywc18-halfhalf:build"
+            "browserTarget": "ywc18-halfhalf:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {

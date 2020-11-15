@@ -1,0 +1,83 @@
+.merchant-card {
+  border: 1px solid rgb(201, 225, 233);
+  background-color: #fff;
+  display: flex;
+  margin-bottom: 8px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .marchant-image {
+    width: 240px;
+    min-height: 224px;
+    background-position: center;
+    background-size: cover;
+    margin: 5px;
+    flex-shrink: 0;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .merchant-detail {
+    padding: 16px;
+    flex-grow: 1;
+
+    .title {
+      font-weight: 600;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .price-range {
+      font-weight: 600;
+    }
+
+    .price-range-faded {
+      color: rgba($color: #000000, $alpha: 0.25);
+    }
+  }
+}
+
+.splitter {
+  margin: 0 12px;
+}
+
+.subtitle {
+  margin-bottom: 8px;
+}
+
+.hr {
+  width: 65%;
+  margin: 18px 0;
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.open-tag {
+  margin-left: 16px;
+}
+
+.facilities {
+  margin: 16px 0 0 0;
+}
+
+.facility-icon {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  margin-right: 8px;
+  border: 1px solid #6cbf5f;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+
+  img {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+  }
+}

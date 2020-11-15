@@ -14,7 +14,12 @@ export class ResultComponent implements OnInit {
     priceRange: '',
     subcategory: 'all',
   };
-  data: DataModel;
+  data: DataModel = {
+    categories: [],
+    provinces: [],
+    priceRange: [],
+    merchants: [],
+  };
 
   constructor(private dataService: DataService) {}
 

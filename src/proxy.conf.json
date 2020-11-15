@@ -1,0 +1,11 @@
+{
+  "/api/*": {
+    "target": "https://panjs.com",
+    "changeOrigin": true,
+    "secure": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
