@@ -1,7 +1,12 @@
 .nav {
+  background-color: #fff;
+}
+
+.nav-container {
   max-width: 1280px;
   height: 60px;
   margin: 0 auto;
+
   display: flex;
   align-items: center;
   flex-direction: row;

@@ -1,0 +1,40 @@
+<h3>ประเภทร้านค้า</h3>
+<nz-radio-group [(ngModel)]="filter.category" class="radio-group">
+  <div class="radio-wrapper">
+    <label nz-radio nzValue="all" class="radio-option">ทั้งหมด</label>
+  </div>
+  <div class="radio-wrapper" *ngFor="let category of data.categories">
+    <label nz-radio [nzValue]="category.name" class="radio-option">{{ category.name }}</label>
+  </div>
+</nz-radio-group>
+
+<h3 class="top-margin">จังหวัด/ใกล้ฉัน</h3>
+<nz-select [(ngModel)]="filter.province" [nzCustomTemplate]="defaultTemplate">
+  <nz-option nzCustomContent nzValue="nearby" nzLabel="พื้นที่ใกล้ฉัน">
+    <img src="assets/location_on-24px.svg" />
+    พื้นที่ใกล้ฉัน
+  </nz-option>
+  <nz-option *ngFor="let province of data.provinces" [nzValue]="province" [nzLabel]="province"></nz-option>
+</nz-select>
+<ng-template #defaultTemplate let-selected>
+  <img src="assets/location_on-24px.svg" *ngIf="selected.nzValue == 'nearby'" />
+  {{ selected.nzLabel }}
+</ng-template>
+
+<h3 class="top-margin">ราคา</h3>
+<nz-select [(ngModel)]="filter.priceRange" nzPlaceHolder="กรุณาเลือก">
+  <nz-option nzValue="all" nzLabel="ทั้งหมด"></nz-option>
+  <nz-option *ngFor="let priceRange of data.priceRange" [nzValue]="priceRange" [nzLabel]="priceRange"></nz-option>
+</nz-select>
+
+<ng-container *ngIf="subcategories">
+  <h3 class="top-margin">ประเภทร้านอาหารและเครื่องดื่ม</h3>
+  <nz-radio-group [(ngModel)]="filter.subcategory" class="radio-group">
+    <div class="radio-wrapper">
+      <label nz-radio nzValue="all" class="radio-option">ทั้งหมด</label>
+    </div>
+    <div class="radio-wrapper" *ngFor="let subcategory of subcategories">
+      <label nz-radio [nzValue]="subcategory" class="radio-option">{{ subcategory }}</label>
+    </div>
+  </nz-radio-group>
+</ng-container>
