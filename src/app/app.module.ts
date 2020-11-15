@@ -5,7 +5,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NzButtonModule, NzIconModule, NzInputModule, NzRadioModule, NzSelectModule, NzTagModule } from 'ng-zorro-antd';
+import {
+  NzButtonModule,
+  NzDrawerModule,
+  NzIconModule,
+  NzInputModule,
+  NzRadioModule,
+  NzSelectModule,
+  NzTagModule,
+} from 'ng-zorro-antd';
 import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
 import { AppComponent } from './app.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
@@ -20,22 +28,23 @@ registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
     BreadcrumbsComponent,
-    ResultComponent,
     FilterComponent,
     MerchantCardComponent,
+    NavComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NzSelectModule,
-    NzInputModule,
     NzButtonModule,
+    NzDrawerModule,
     NzIconModule,
+    NzInputModule,
     NzRadioModule,
+    NzSelectModule,
     NzTagModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }, DataService],

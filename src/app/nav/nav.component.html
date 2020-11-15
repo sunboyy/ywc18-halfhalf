@@ -1,28 +1,55 @@
 <div class="nav">
   <div class="nav-container">
     <div class="logo only-desktop">
-      <img src="https://search-merchant.xn--42caj4e6bk1f5b1j.com/images/halfhalf-logo.png" height="40">
+      <img src="https://search-merchant.xn--42caj4e6bk1f5b1j.com/images/halfhalf-logo.png" height="40" />
     </div>
     <div class="logo only-mobile">
-      <img src="https://search-merchant.xn--42caj4e6bk1f5b1j.com/images/halfhalf-logo-mini.png" height="40">
+      <img src="https://search-merchant.xn--42caj4e6bk1f5b1j.com/images/halfhalf-logo-mini.png" height="40" />
     </div>
     <div class="search">
-      <nz-select [ngModel]="searchLocation" [nzCustomTemplate]="defaultTemplate" nzSize="large" [nzDropdownMatchSelectWidth]="false" nzBorderless class="location-select only-desktop">
+      <nz-select
+        [ngModel]="searchLocation"
+        [nzCustomTemplate]="defaultTemplate"
+        nzSize="large"
+        [nzDropdownMatchSelectWidth]="false"
+        nzBorderless
+        class="location-select only-desktop"
+      >
         <nz-option nzCustomContent nzValue="nearby" nzLabel="พื้นที่ใกล้ฉัน">
-          <img src="assets/location_on-24px.svg">
+          <img src="assets/location_on-24px.svg" />
           พื้นที่ใกล้ฉัน
         </nz-option>
-        <nz-option *ngFor="let province of provinces" [nzValue]="province" [nzLabel]="province"></nz-option>
+        <nz-option *ngFor="let province of data.provinces" [nzValue]="province" [nzLabel]="province"></nz-option>
       </nz-select>
       <ng-template #defaultTemplate let-selected>
-        <img src="assets/location_on-24px.svg" *ngIf="selected.nzValue == 'nearby'">
+        <img src="assets/location_on-24px.svg" *ngIf="selected.nzValue == 'nearby'" />
         {{ selected.nzLabel }}
       </ng-template>
-      <input type="text" nz-input [ngModel]="searchQuery" class="query-field" placeholder="ค้นหา ชื่อ ร้านอาหาร และเครื่องดื่ม ร้านธงฟ้า ร้านค้า OTOP และสินค้าทั่วไป">
+      <input
+        type="text"
+        nz-input
+        [ngModel]="searchQuery"
+        class="query-field"
+        placeholder="ค้นหา ชื่อ ร้านอาหาร และเครื่องดื่ม ร้านธงฟ้า ร้านค้า OTOP และสินค้าทั่วไป"
+      />
       <button nz-button class="search-button">
         <i nz-icon nzType="search" nzTheme="outline"></i>
       </button>
     </div>
-    <img src="https://search-merchant.xn--42caj4e6bk1f5b1j.com/images/filter.png" class="only-mobile filter-img">
+    <img
+      src="https://search-merchant.xn--42caj4e6bk1f5b1j.com/images/filter.png"
+      class="only-mobile filter-img"
+      (click)="openDrawer()"
+    />
   </div>
 </div>
+
+<nz-drawer [nzClosable]="false" [nzVisible]="isDrawerVisible" nzWidth="100%" [nzBodyStyle]="{ padding: '0' }">
+  <div class="filter-header">
+    <i nz-icon nzType="left" class="filter-back-icon" (click)="closeDrawer()"></i>
+    <span class="filter-header-text">กรอกผล</span>
+  </div>
+  <div class="filter-body">
+    <app-filter [filter]="filter" [data]="data"></app-filter>
+  </div>
+</nz-drawer>
