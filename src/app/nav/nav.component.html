@@ -1,9 +1,12 @@
 <div class="nav">
-  <div class="logo">
+  <div class="logo only-desktop">
     <img src="https://search-merchant.xn--42caj4e6bk1f5b1j.com/images/halfhalf-logo.png" height="40">
   </div>
+  <div class="logo only-mobile">
+    <img src="https://search-merchant.xn--42caj4e6bk1f5b1j.com/images/halfhalf-logo-mini.png" height="40">
+  </div>
   <div class="search">
-    <nz-select [ngModel]="searchLocation" [nzCustomTemplate]="defaultTemplate" nzSize="large" [nzDropdownMatchSelectWidth]="false" nzBorderless class="location-select">
+    <nz-select [ngModel]="searchLocation" [nzCustomTemplate]="defaultTemplate" nzSize="large" [nzDropdownMatchSelectWidth]="false" nzBorderless class="location-select only-desktop">
       <nz-option nzCustomContent nzValue="nearby" nzLabel="พื้นที่ใกล้ฉัน">
         <img src="assets/location_on-24px.svg">
         พื้นที่ใกล้ฉัน
@@ -18,4 +21,5 @@
       <i nz-icon nzType="search" nzTheme="outline"></i>
     </button>
   </div>
+  <img src="https://search-merchant.xn--42caj4e6bk1f5b1j.com/images/filter.png" class="only-mobile filter-img">
 </div>

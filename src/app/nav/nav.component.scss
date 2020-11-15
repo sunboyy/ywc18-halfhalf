@@ -9,17 +9,25 @@
 
 .logo {
   height: 60px;
-  padding: 10px 2rem;
+  padding: 10px 32px;
+
+  @media screen and (max-width: 768px) {
+    padding: 10px 16px;
+  }
 }
 
 .search {
   border-radius: 10px;
-  margin-right: 2rem;
+  margin-right: 32px;
   border: 1px solid #ccc;
   overflow: hidden;
 
   display: flex;
   flex-grow: 1;
+
+  @media screen and (max-width: 768px) {
+    margin-right: 16px;
+  }
 }
 
 .location-select {
@@ -45,4 +53,9 @@
   i {
     font-size: 14px;
   }
+}
+
+.filter-img {
+  margin-right: 16px;
+  width: 20px;
 }
