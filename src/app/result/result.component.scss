@@ -2,11 +2,18 @@
   padding: 18px 16px;
 }
 
+.heading-container {
+  @media screen and (max-width: 768px) {
+    margin-top: 8px;
+  }
+}
+
 h2 {
   font-weight: 600;
   font-size: 1.25rem;
-  letter-spacing: -0.02em;
   margin-bottom: 48px;
+  letter-spacing: -0.02em;
+  line-height: 32px;
 }
 
 .flex {
@@ -15,10 +22,11 @@ h2 {
 }
 
 .sidebar-filter {
-  width: 350px;
+  width: 352px;
   background-color: #fff;
   border: 1px solid #a0aec0;
   margin-right: 32px;
+  flex-shrink: 0;
 }
 
 .main-result {
