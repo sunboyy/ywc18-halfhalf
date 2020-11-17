@@ -10,7 +10,7 @@
   </nz-radio-group>
 
   <h3 class="top-margin">จังหวัด/ใกล้ฉัน</h3>
-  <nz-select [(ngModel)]="filter.province" [nzCustomTemplate]="defaultTemplate">
+  <nz-select [(ngModel)]="filter.province" [nzCustomTemplate]="defaultTemplate" class="select">
     <nz-option nzCustomContent nzValue="nearby" nzLabel="พื้นที่ใกล้ฉัน">
       <img src="assets/location_on-24px.svg" />
       พื้นที่ใกล้ฉัน
@@ -23,7 +23,7 @@
   </ng-template>
 
   <h3 class="top-margin">ราคา</h3>
-  <nz-select [(ngModel)]="filter.priceRange" nzPlaceHolder="กรุณาเลือก">
+  <nz-select [(ngModel)]="filter.priceRange" nzPlaceHolder="กรุณาเลือก" class="select">
     <nz-option nzValue="all" nzLabel="ทั้งหมด"></nz-option>
     <nz-option *ngFor="let priceRange of data.priceRange" [nzValue]="priceRange" [nzLabel]="priceRange"></nz-option>
   </nz-select>

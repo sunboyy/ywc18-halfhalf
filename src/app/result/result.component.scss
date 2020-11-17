@@ -16,12 +16,12 @@ h2 {
   line-height: 32px;
 }
 
-.flex {
+.filter-result {
   display: flex;
   align-items: flex-start;
 }
 
-.sidebar-filter {
+.filter-container {
   width: 352px;
   background-color: #fff;
   border: 1px solid #a0aec0;
@@ -29,7 +29,7 @@ h2 {
   flex-shrink: 0;
 }
 
-.main-result {
+.merchant-list {
   flex-grow: 1;
 }
 
