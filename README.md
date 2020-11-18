@@ -1,6 +1,6 @@
-# Ywc18Halfhalf
+# YWC18 คนละครึ่ง
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
+โปรเจกต์นี้ใช้สำหรับการสัมภาษณ์ค่าย YWC18 เท่านั้น
 
 ## Development server
 

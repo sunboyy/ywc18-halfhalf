@@ -1,3 +1,6 @@
+$font-prefix: '../node_modules/@ibm/plex';
+@import '~@ibm/plex/scss/sans-thai/index';
+
 body {
   margin: 0;
   font-family: 'IBM Plex Sans Thai';

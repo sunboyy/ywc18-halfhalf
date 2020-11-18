@@ -35,8 +35,7 @@
             ],
             "styles": [
               "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
-              "src/styles.scss",
-              "./node_modules/@ibm/plex/scss/ibm-plex.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           },
