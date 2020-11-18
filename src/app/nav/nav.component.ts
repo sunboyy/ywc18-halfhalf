@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataModel, DataService } from '../data.service';
 import { Filter } from '../filter/filter.component';
 
@@ -8,12 +8,9 @@ import { Filter } from '../filter/filter.component';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  filter: Filter = {
-    category: 'ร้านอาหารและเครื่องดื่ม',
-    province: 'nearby',
-    priceRange: '',
-    subcategory: 'all',
-  };
+  @Input()
+  filter: Filter;
+
   data: DataModel = {
     categories: [],
     provinces: [],
