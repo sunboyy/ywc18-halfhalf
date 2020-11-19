@@ -25,7 +25,7 @@
   <h3 class="top-margin">ราคา</h3>
   <nz-select [(ngModel)]="filter.priceRange" nzPlaceHolder="กรุณาเลือก" class="select">
     <nz-option nzValue="all" nzLabel="ทั้งหมด"></nz-option>
-    <nz-option *ngFor="let priceRange of data.priceRange" [nzValue]="priceRange" [nzLabel]="priceRange"></nz-option>
+    <nz-option *ngFor="let priceRange of data.priceRange; let i = index" [nzValue]="i+1" [nzLabel]="priceRange"></nz-option>
   </nz-select>
 
   <ng-container *ngIf="subcategories">

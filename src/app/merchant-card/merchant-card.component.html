@@ -7,7 +7,7 @@
       <nz-tag class="open-tag" nzColor="#a1a1a1" *ngIf="merchant.isOpen == 'N'">ปิดแล้ว</nz-tag>
     </div>
     <div class="subtitle">
-      <span>{{ merchant.categoryName }}</span>
+      <span>{{ merchant.subcategoryName }}</span>
       <span class="splitter">|</span>
       <span class="price-range">{{ getPriceRangeB(merchant.priceLevel) }}</span>
       <span class="price-range price-range-faded">{{ getPriceRangeB(4 - merchant.priceLevel) }}</span>

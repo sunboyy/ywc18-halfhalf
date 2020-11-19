@@ -7,8 +7,14 @@
       <app-filter [filter]="filter" [data]="data"></app-filter>
     </div>
     <div class="merchant-list">
-      <app-merchant-card *ngFor="let merchant of data.merchants" [merchant]="merchant"></app-merchant-card>
-      <button nz-button class="show-more">ดูเพิ่มเติม</button>
+      <ng-container *ngIf="filteredMerchants.length > 0">
+        <app-merchant-card *ngFor="let merchant of filteredMerchants" [merchant]="merchant"></app-merchant-card>
+        <button nz-button class="show-more">ดูเพิ่มเติม</button>
+      </ng-container>
+      <ng-container *ngIf="filteredMerchants.length == 0">
+        <div class="notfound-title">ไม่พบสถานที่ที่คุณกำลังหา</div>
+        <div class="notfound-body">ร้านค้าที่ท่านค้นหาอาจไม่ได้เข้าร่วมโครงการ คนละครึ่ง</div>
+      </ng-container>
     </div>
   </div>
 </div>
